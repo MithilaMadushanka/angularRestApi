@@ -1,0 +1,27 @@
+<app-loader *ngIf="is_loadeing "></app-loader>
+<div class="wrapper fadeInDown" *ngIf="!is_loadeing">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <h3 class="text-center mt-3 text-primary">Login to Your Account</h3>
+      <p class="text-center text-danger">{{error_msg}}</p>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1uO9yM0Gp_F2e2oAGZT5dBwsG8yf-WhG-KWYAJVEgsTSx0VAJHUmEv7pO8u9Y8CsXZNM&usqp=CAU" id="icon" alt="User Icon" />
+    </div>
+
+    <!-- Login Form -->
+    <form >
+      <input type="text" id="login" class="fadeIn second" name="usr_email" [(ngModel)]="email" placeholder="User name">
+      <input type="password" id="password" class="fadeIn third " name="usr_password" [(ngModel)]="password" placeholder="password">
+<!--      <input type="submit" routerLink="/Dash" class="fadeIn fourth" value="Log In">-->
+      <input type="submit" (click)="login()" class="fadeIn fourth" value="Log In">
+    </form>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a class="underlineHover" href="#">Forgot Password?</a>
+    </div>
+
+  </div>
+</div>
